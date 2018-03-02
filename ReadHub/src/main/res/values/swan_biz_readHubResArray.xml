@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="swan_biz_readHubMasterTabItem">
+        <item>@string/swan_biz_readHubMasterTabTopic</item>
+        <item>@string/swan_biz_readHubMasterTabNews</item>
+        <item>@string/swan_biz_readHubMasterTabMe</item>
+    </string-array>
+
+</resources>

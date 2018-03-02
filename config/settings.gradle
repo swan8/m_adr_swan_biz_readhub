@@ -1,0 +1,67 @@
+ext {
+
+    basic = [
+
+
+    ]
+
+    swan = [
+
+            AtomCore                        : 'com.github.swan8:m_adr_swan_atom_core:0.0.2'
+    ]
+
+    libVersions = [
+            
+            Ver_Goolge_Support              : "27.0.2",
+            Ver_Goolge_Support_Constraint   : "1.0.2",
+            Ver_Goolge_Support_Multidex     : "1.0.0",
+            Ver_Goolge_LiftCycle            : "1.1.0",
+
+            Ver_Kotlin                      : "${kotlin_version}",
+
+            Ver_Square_Retrofit             : "2.3.0",
+            Ver_Square_Okhttp_Logging       : "3.4.1",
+
+            Ver_Rx_Java                     : "1.3.5",
+            Ver_Rx_Android                  : "2.0.1",
+            Ver_Rx_Kotlin                   : "2.2.0",
+    ]
+
+    NewKotlin = [
+
+            Kotlin                          : "org.jetbrains.kotlin:kotlin-stdlib:${libVersions.Ver_Kotlin}"
+    ]
+
+    google = [
+
+            supportAppcompatV7              : "com.android.support:appcompat-v7:${libVersions.Ver_Goolge_Support}",
+            supportRecyclerView             : "com.android.support:recyclerview-v7:${libVersions.Ver_Goolge_Support}",
+            supportV4                       : "com.android.support:support-v4:${libVersions.Ver_Goolge_Support}",
+            supportV4Compat                 : "com.android.support:support-compat:${libVersions.Ver_Goolge_Support}",
+            supportV4CoreUI                 : "com.android.support:support-core-ui:${libVersions.Ver_Goolge_Support}",
+            supportV4Fragment               : "com.android.support:support-fragment:${libVersions.Ver_Goolge_Support}",
+            supportAnnotation               : "com.android.support:support-annotations:${libVersions.Ver_Goolge_Support}",
+            supportDesign                   : "com.android.support:design:${libVersions.Ver_Goolge_Support}",
+            supportConstraintLayout         : "com.android.support.constraint:constraint-layout:${libVersions.Ver_Goolge_Support_Constraint}",
+            supportMultidex                 : "com.android.support:multidex:${libVersions.Ver_Goolge_Support_Multidex}",
+
+            LifeCycleRuntim                 : "android.arch.lifecycle:runtime:${libVersions.Ver_Goolge_LiftCycle}",
+            LifeCycleExtensions             : "android.arch.lifecycle:extensions:${libVersions.Ver_Goolge_LiftCycle}",
+            LifeCycleCompiler               : "android.arch.lifecycle:compiler:${libVersions.Ver_Goolge_LiftCycle}",
+    ]
+
+    square = [
+            Retrofit                        : "com.squareup.retrofit2:retrofit:${libVersions.Ver_Square_Retrofit}",
+            Retrofit_Adapter                : "com.squareup.retrofit2:adapter-rxjava2:${libVersions.Ver_Square_Retrofit}",
+            Retrofit_Jackson                : "com.squareup.retrofit2:converter-jackson:${libVersions.Ver_Square_Retrofit}",
+
+            Okhttp_Logging                  : "com.squareup.okhttp3:logging-interceptor:${libVersions.Ver_Square_Okhttp_Logging}"
+    ]
+
+    ReactiveX = [
+            RxJava                          : "io.reactivex:rxjava:${libVersions.Ver_Rx_Java}",
+            RxAndroid                       : "io.reactivex.rxjava2:rxandroid:${libVersions.Ver_Rx_Android}",
+            RxKotlin                        : "io.reactivex.rxjava2:rxkotlin:${libVersions.Ver_Rx_Kotlin}"
+    ]
+
+}

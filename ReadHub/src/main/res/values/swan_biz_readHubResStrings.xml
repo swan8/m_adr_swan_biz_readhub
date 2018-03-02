@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ReadHub</string>
+
+    <string name="swan_biz_readHubMasterTabTopic">热</string>
+    <string name="swan_biz_readHubMasterTabNews">新</string>
+    <string name="swan_biz_readHubMasterTabMe">我</string>
+
+</resources>

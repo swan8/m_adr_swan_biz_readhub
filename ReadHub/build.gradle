@@ -1,47 +1,42 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply from: "config/dependencies.gradle"
+
 android {
 
     compileSdkVersion 27
+
     buildToolsVersion "27.0.3"
 
     defaultConfig {
-        applicationId "com.stephen.android"
+
         minSdkVersion 15
         targetSdkVersion 27
+
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+
         release {
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
     lintOptions {
         abortOnError false
     }
-}
-
-dependencies {
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-//    implementation 'com.github.swan8:m_adr_swan_atom_core:0.0.2'
-
-    implementation "${google.supportAppcompatV7}"
-    implementation "${google.supportConstraintLayout}"
-
-    implementation "${google.LifeCycleRuntim}"
-    implementation "${google.LifeCycleExtensions}"
-    annotationProcessor "${google.LifeCycleCompiler}"
-
-    implementation project(':ReadHub')
 }

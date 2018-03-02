@@ -1,0 +1,22 @@
+dependencies {
+
+    implementation "${google.supportAppcompatV7}"
+    implementation "${google.supportConstraintLayout}"
+    implementation "${google.supportDesign}"
+
+    implementation "${google.LifeCycleRuntim}"
+    implementation "${google.LifeCycleExtensions}"
+    annotationProcessor "${google.LifeCycleCompiler}"
+
+    implementation "${NewKotlin.Kotlin}"
+
+    implementation "${square.Retrofit}"
+    implementation "${square.Retrofit_Adapter}"
+    implementation "${square.Retrofit_Jackson}"
+    implementation "${square.Okhttp_Logging}"
+
+    implementation "${ReactiveX.RxAndroid}"
+    implementation "${ReactiveX.RxKotlin}"
+
+    implementation "${swan.AtomCore}"
+}
