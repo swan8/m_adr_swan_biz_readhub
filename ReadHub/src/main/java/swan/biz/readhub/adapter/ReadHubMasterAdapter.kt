@@ -1,13 +1,12 @@
 package swan.biz.readhub.adapter
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.content.ContextCompat
 import android.text.Spannable
-import android.text.SpannableString
+import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
 import swan.biz.readhub.R
 import swan.biz.readhub.fragment.ReadHubMasterMeFragment
@@ -66,24 +65,33 @@ class ReadHubMasterAdapter constructor(fragmentManager: FragmentManager): Fragme
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        var resource: Pair<Drawable?, Int>? = null
-        when (position) {
-            POSITION.TOPIC ->
-                resource = Pair(ContextCompat.getDrawable(context!!, R.drawable.read_hub_ic_master_tab_topic), R.string.swan_biz_readHubMasterTabTopic)
-            POSITION.NEWS ->
-                resource = Pair(ContextCompat.getDrawable(context!!, R.drawable.read_hub_ic_master_tab_news), R.string.swan_biz_readHubMasterTabNews)
-            POSITION.ME ->
-                resource = Pair(ContextCompat.getDrawable(context!!, R.drawable.read_hub_ic_master_tab_me), R.string.swan_biz_readHubMasterTabMe)
+        position.let {
+            when (position) {
+                POSITION.TOPIC ->
+                    Pair(R.drawable.read_hub_ic_master_tab_topic, R.string.swan_biz_readHubMasterTabTopic)
+                POSITION.NEWS ->
+                    Pair(R.drawable.read_hub_ic_master_tab_news, R.string.swan_biz_readHubMasterTabNews)
+                POSITION.ME ->
+                    Pair(R.drawable.read_hub_ic_master_tab_me, R.string.swan_biz_readHubMasterTabMe)
+                else -> null
+            }
+        }?.let {
+            val builder = SpannableStringBuilder(context!!.getString(it.second))
+
+            it.first.let {
+                ContextCompat.getDrawable(context!!, it)
+            }?.let {
+                it.setBounds(0, 0, it.intrinsicWidth, it.intrinsicHeight)
+
+                builder.insert(0, "i\n")
+                builder.setSpan(ImageSpan(it, ImageSpan.ALIGN_BASELINE), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+
+            builder
+        }?.let {
+            return it
         }
 
-        if (null == resource) {
-            return null
-        } else{
-            resource.first?.setBounds(0, 0, resource.first!!.intrinsicWidth, resource.first!!.intrinsicHeight)
-
-            var builder = SpannableString("q\n${context!!.getString(resource.second)}")
-            builder.setSpan(ImageSpan(resource.first, ImageSpan.ALIGN_BOTTOM), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-            return builder
-        }
+        return null
     }
 }

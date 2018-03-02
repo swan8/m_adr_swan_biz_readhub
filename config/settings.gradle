@@ -25,6 +25,8 @@ ext {
             Ver_Rx_Java                     : "1.3.5",
             Ver_Rx_Android                  : "2.0.1",
             Ver_Rx_Kotlin                   : "2.2.0",
+
+            Ver_Nice_Timber                 : "1.4.0",
     ]
 
     NewKotlin = [
@@ -64,4 +66,8 @@ ext {
             RxKotlin                        : "io.reactivex.rxjava2:rxkotlin:${libVersions.Ver_Rx_Kotlin}"
     ]
 
+    nice = [
+
+            TimberKt                        : "com.github.ajalt:timberkt:${libVersions.Ver_Nice_Timber}"
+    ]
 }

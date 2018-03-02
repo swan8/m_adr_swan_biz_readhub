@@ -18,5 +18,7 @@ dependencies {
     implementation "${ReactiveX.RxAndroid}"
     implementation "${ReactiveX.RxKotlin}"
 
+    implementation "${nice.TimberKt}"
+
     implementation "${swan.AtomCore}"
 }
