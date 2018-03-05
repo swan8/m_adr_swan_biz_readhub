@@ -1,24 +1,22 @@
 apply plugin: 'com.android.library'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply from: "config/dependencies.gradle"
 
 android {
 
-    compileSdkVersion 27
+    def ext = rootProject.extensions.getByName("ext")
 
-    buildToolsVersion "27.0.3"
+    compileSdkVersion ext.basic.compileSDK
+    buildToolsVersion ext.basic.buildVersion
 
     defaultConfig {
 
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion ext.basic.minSDK
+        targetSdkVersion ext.basic.targetVersion
 
-        versionCode 1
-        versionName "1.0"
+        versionCode ext.basic.versionCode
+        versionName ext.basic.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -62,5 +60,9 @@ android {
 
     lintOptions {
         abortOnError false
+    }
+
+    dexOptions {
+        incremental false
     }
 }

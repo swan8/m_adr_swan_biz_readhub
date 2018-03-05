@@ -1,6 +1,7 @@
 dependencies {
 
     implementation "${google.supportAppcompatV7}"
+    implementation "${google.supportCardView}"
     implementation "${google.supportConstraintLayout}"
     implementation "${google.supportDesign}"
 
@@ -18,7 +19,15 @@ dependencies {
     implementation "${ReactiveX.RxAndroid}"
     implementation "${ReactiveX.RxKotlin}"
 
+    implementation "${mikePenz.Materialize}"
+    implementation "${mikePenz.FastAdapter}"
+    implementation "${mikePenz.FastAdapterCommons}"
+
+    implementation "${ramotion.CardSlider}"
+
     implementation "${nice.TimberKt}"
+    implementation "${nice.Croller}"
+    implementation "${nice.SmoothRefreshLayout}"
 
     implementation "${swan.AtomCore}"
 }

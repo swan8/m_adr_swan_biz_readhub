@@ -6,13 +6,18 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
 
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    def ext = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion ext.basic.compileSDK
+    buildToolsVersion ext.basic.buildVersion
 
     defaultConfig {
+
         applicationId "com.stephen.android"
-        minSdkVersion 15
-        targetSdkVersion 27
+
+        minSdkVersion ext.basic.minSDK
+        targetSdkVersion ext.basic.targetVersion
+
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

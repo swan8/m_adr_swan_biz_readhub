@@ -2,12 +2,18 @@ ext {
 
     basic = [
 
+            compileSDK                      : 27,
+            minSDK                          : 16,
+            buildVersion                    : "27.0.3",
+            targetVersion                   : 27,
 
+            versionCode                     : 1,
+            versionName                     : "1.0.0"
     ]
 
     swan = [
 
-            AtomCore                        : 'com.github.swan8:m_adr_swan_atom_core:0.0.2'
+            AtomCore                        : 'com.github.swan8:m_adr_swan_atom_core:0.0.3'
     ]
 
     libVersions = [
@@ -26,7 +32,14 @@ ext {
             Ver_Rx_Android                  : "2.0.1",
             Ver_Rx_Kotlin                   : "2.2.0",
 
+            Ver_Ramotion_CardSlider         : "0.2.0", // https://github.com/Ramotion/cardslider-android
+
+            Ver_MikePenz_FastAdapter        : "3.2.4@aar",
+            Ver_MikePenz_Materialize        : "1.1.2",
+
             Ver_Nice_Timber                 : "1.4.0",
+            Ver_Nice_Croller                : "1.0.7", // https://github.com/harjot-oberai/Croller
+            VER_Nice_SmoothRefreshLayout    : "1.6.2", // https://github.com/dkzwm/SmoothRefreshLayout
     ]
 
     NewKotlin = [
@@ -44,6 +57,7 @@ ext {
             supportV4Fragment               : "com.android.support:support-fragment:${libVersions.Ver_Goolge_Support}",
             supportAnnotation               : "com.android.support:support-annotations:${libVersions.Ver_Goolge_Support}",
             supportDesign                   : "com.android.support:design:${libVersions.Ver_Goolge_Support}",
+            supportCardView                 : "com.android.support:cardview-v7:${libVersions.Ver_Goolge_Support}",
             supportConstraintLayout         : "com.android.support.constraint:constraint-layout:${libVersions.Ver_Goolge_Support_Constraint}",
             supportMultidex                 : "com.android.support:multidex:${libVersions.Ver_Goolge_Support_Multidex}",
 
@@ -66,8 +80,22 @@ ext {
             RxKotlin                        : "io.reactivex.rxjava2:rxkotlin:${libVersions.Ver_Rx_Kotlin}"
     ]
 
+    ramotion = [
+
+            CardSlider                      : "com.ramotion.cardslider:card-slider:${libVersions.Ver_Ramotion_CardSlider}",
+    ]
+
+    mikePenz = [ // http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.mikepenz%22
+
+            Materialize                     : "com.mikepenz:materialize:${libVersions.Ver_MikePenz_Materialize}",
+            FastAdapter                     : "com.mikepenz:fastadapter:${libVersions.Ver_MikePenz_FastAdapter}",
+            FastAdapterCommons              : "com.mikepenz:fastadapter-commons:${libVersions.Ver_MikePenz_FastAdapter}",
+    ]
+
     nice = [
 
-            TimberKt                        : "com.github.ajalt:timberkt:${libVersions.Ver_Nice_Timber}"
+            TimberKt                        : "com.github.ajalt:timberkt:${libVersions.Ver_Nice_Timber}",
+            Croller                         : "com.sdsmdg.harjot:croller:${libVersions.Ver_Nice_Croller}",
+            SmoothRefreshLayout             : "com.github.dkzwm:SmoothRefreshLayout:${libVersions.VER_Nice_SmoothRefreshLayout}",
     ]
 }
