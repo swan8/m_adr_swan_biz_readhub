@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ReadHub/ReadHub.iml" filepath="$PROJECT_DIR$/ReadHub/ReadHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReadHub/ReadHub.iml" filepath="$PROJECT_DIR$/ReadHub/ReadHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SwanBizOwl.iml" filepath="$PROJECT_DIR$/SwanBizOwl.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwanBizReadHub.iml" filepath="$PROJECT_DIR$/SwanBizReadHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

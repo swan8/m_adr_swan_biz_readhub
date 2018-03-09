@@ -37,9 +37,10 @@ ext {
             Ver_MikePenz_FastAdapter        : "3.2.4@aar",
             Ver_MikePenz_Materialize        : "1.1.2",
 
+            Ver_Jsoup                       : "1.11.2",
             Ver_Nice_Timber                 : "1.4.0",
             Ver_Nice_Croller                : "1.0.7", // https://github.com/harjot-oberai/Croller
-            VER_Nice_SmoothRefreshLayout    : "1.6.2", // https://github.com/dkzwm/SmoothRefreshLayout
+            Ver_Nice_SmoothRefreshLayout    : "1.6.2", // https://github.com/dkzwm/SmoothRefreshLayout
     ]
 
     NewKotlin = [
@@ -70,6 +71,7 @@ ext {
             Retrofit                        : "com.squareup.retrofit2:retrofit:${libVersions.Ver_Square_Retrofit}",
             Retrofit_Adapter                : "com.squareup.retrofit2:adapter-rxjava2:${libVersions.Ver_Square_Retrofit}",
             Retrofit_Jackson                : "com.squareup.retrofit2:converter-jackson:${libVersions.Ver_Square_Retrofit}",
+            Retrofit_Scalars                : "com.squareup.retrofit2:converter-scalars:${libVersions.Ver_Square_Retrofit}",
 
             Okhttp_Logging                  : "com.squareup.okhttp3:logging-interceptor:${libVersions.Ver_Square_Okhttp_Logging}"
     ]
@@ -94,8 +96,9 @@ ext {
 
     nice = [
 
+            Jsoup                           : "org.jsoup:jsoup:${libVersions.Ver_Jsoup}",
             TimberKt                        : "com.github.ajalt:timberkt:${libVersions.Ver_Nice_Timber}",
             Croller                         : "com.sdsmdg.harjot:croller:${libVersions.Ver_Nice_Croller}",
-            SmoothRefreshLayout             : "com.github.dkzwm:SmoothRefreshLayout:${libVersions.VER_Nice_SmoothRefreshLayout}",
+            SmoothRefreshLayout             : "com.github.dkzwm:SmoothRefreshLayout:${libVersions.Ver_Nice_SmoothRefreshLayout}",
     ]
 }

@@ -14,6 +14,7 @@ dependencies {
     implementation "${square.Retrofit}"
     implementation "${square.Retrofit_Adapter}"
     implementation "${square.Retrofit_Jackson}"
+    implementation "${square.Retrofit_Scalars}"
     implementation "${square.Okhttp_Logging}"
 
     implementation "${ReactiveX.RxAndroid}"
@@ -25,6 +26,7 @@ dependencies {
 
     implementation "${ramotion.CardSlider}"
 
+    implementation "${nice.Jsoup}"
     implementation "${nice.TimberKt}"
     implementation "${nice.Croller}"
     implementation "${nice.SmoothRefreshLayout}"
