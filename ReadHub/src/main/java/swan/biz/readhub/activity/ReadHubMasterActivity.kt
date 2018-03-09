@@ -1,15 +1,15 @@
 package swan.biz.readhub.activity
 
+import android.app.Activity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import android.text.format.DateUtils
+import android.view.Window
 import com.github.ajalt.timberkt.Timber
 import kotlinx.android.synthetic.main.read_hub_master.*
 import swan.biz.readhub.R
 import swan.biz.readhub.adapter.ReadHubMasterAdapter
-import swan.biz.readhub.network.ReadHubRequestDelegate
-import swan.biz.readhub.network.SchedulerTransformer
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -18,9 +18,17 @@ import java.util.*
  */
 class ReadHubMasterActivity: AppCompatActivity() {
 
+    companion object {
+        var context: Activity? = null
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
         setContentView(R.layout.read_hub_master)
+
+        context = this
 
         Timber.plant(Timber.DebugTree())
 
@@ -30,16 +38,6 @@ class ReadHubMasterActivity: AppCompatActivity() {
 
         masterTabContainer.setupWithViewPager(masterContentContainer)
         masterTabContainer.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(masterContentContainer))
-
-        ReadHubRequestDelegate.ReadHub()!!.postRequestReadHubTopic("4djhWVo81n9")
-                .compose(SchedulerTransformer())
-                .subscribe({
-                    Timber.e {
-                        "postRequestReadHubTopic::${it?.createdAt} == ${getCreateDate(it.createdAt)}"
-                    }
-                }, {
-                    it.printStackTrace()
-                })
     }
 
     fun getCreateDate(createdAt: String?): String? {

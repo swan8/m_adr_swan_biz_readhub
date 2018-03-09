@@ -1,0 +1,34 @@
+dependencies {
+
+    api "${google.supportAppcompatV7}"
+    api "${google.supportCardView}"
+    api "${google.supportConstraintLayout}"
+    api "${google.supportDesign}"
+
+    api "${google.LifeCycleRuntim}"
+    api "${google.LifeCycleExtensions}"
+    annotationProcessor "${google.LifeCycleCompiler}"
+
+    api "${NewKotlin.Kotlin}"
+
+    api "${square.Retrofit}"
+    api "${square.Retrofit_Adapter}"
+    api "${square.Retrofit_Jackson}"
+    api "${square.Okhttp_Logging}"
+
+    api "${ReactiveX.RxAndroid}"
+    api "${ReactiveX.RxKotlin}"
+
+    api "${mikePenz.Materialize}"
+    api "${mikePenz.FastAdapter}"
+    api "${mikePenz.FastAdapterCommons}"
+
+    api "${ramotion.CardSlider}"
+    api "${ramotion.ECollection}"
+
+    api "${nice.TimberKt}"
+    api "${nice.Croller}"
+    api "${nice.SmoothRefreshLayout}"
+
+//    api "${swan.AtomCore}"
+}

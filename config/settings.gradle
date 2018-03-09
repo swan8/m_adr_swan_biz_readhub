@@ -3,7 +3,7 @@ ext {
     basic = [
 
             compileSDK                      : 27,
-            minSDK                          : 16,
+            minSDK                          : 21,
             buildVersion                    : "27.0.3",
             targetVersion                   : 27,
 
@@ -33,6 +33,7 @@ ext {
             Ver_Rx_Kotlin                   : "2.2.0",
 
             Ver_Ramotion_CardSlider         : "0.2.0", // https://github.com/Ramotion/cardslider-android
+            Ver_Ramotion_ECollection        : "0.9.0", // https://github.com/Ramotion/expanding-collection-android
 
             Ver_MikePenz_FastAdapter        : "3.2.4@aar",
             Ver_MikePenz_Materialize        : "1.1.2",
@@ -83,6 +84,7 @@ ext {
     ramotion = [
 
             CardSlider                      : "com.ramotion.cardslider:card-slider:${libVersions.Ver_Ramotion_CardSlider}",
+            ECollection                     : "com.ramotion.expandingcollection:expanding-collection:${libVersions.Ver_Ramotion_ECollection}",
     ]
 
     mikePenz = [ // http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.mikepenz%22

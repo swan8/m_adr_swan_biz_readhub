@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply from: "config/dependencies.gradle"
 
 android {
 
@@ -65,4 +64,9 @@ android {
     dexOptions {
         incremental false
     }
+}
+
+dependencies {
+
+    implementation project(':Core')
 }
