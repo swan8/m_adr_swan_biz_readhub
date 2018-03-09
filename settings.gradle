@@ -1,1 +1,1 @@
-include ':app', ':ReadHub', ':Core'
+include ':app', ':ReadHub', ':Core', ':Koala'

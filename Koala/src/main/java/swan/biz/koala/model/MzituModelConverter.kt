@@ -1,0 +1,33 @@
+package swan.biz.koala.model
+
+import org.jsoup.Jsoup
+
+/**
+ * Created by stephen on 18-3-9.
+ */
+class MzituModelConverter {
+
+    companion object {
+
+        const val LIST = "ul[id=pins]"
+    }
+
+    fun mConverterList(xml: String?): MutableList<MzituImage> {
+        val list: MutableList<MzituImage> = mutableListOf<MzituImage>()
+        xml?.map {
+            Jsoup.parse(xml)
+        }?.map {
+            it.select(LIST)
+        }?.map {
+            it?.get(0)?.select("li")
+        }?.map {
+            val image: MzituImage = MzituImage()
+            image.url = it?.select("a")?.first()?.attr("href")
+            image.original = it?.select("img")?.first()?.attr("data-original")
+            image.title = it?.select("img")?.first()?.attr("alt")
+            list.add(image)
+        }
+
+        return list
+    }
+}

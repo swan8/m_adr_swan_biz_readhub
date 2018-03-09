@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply from: "config/dependencies.gradle"
 
 android {
 
@@ -20,6 +21,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+
+        release {
+            storeFile file('src/release/swan.jks')
+            storePassword 'adrSwan'
+            keyAlias 'adrSwan'
+            keyPassword 'adrSwan'
+            v2SigningEnabled false
+        }
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -31,9 +43,4 @@ android {
     dexOptions {
 //        incremental false
     }
-}
-
-dependencies {
-
-    implementation project(':Core')
 }

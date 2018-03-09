@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Core" />
+            <option value="$PROJECT_DIR$/Koala" />
             <option value="$PROJECT_DIR$/ReadHub" />
             <option value="$PROJECT_DIR$/app" />
           </set>

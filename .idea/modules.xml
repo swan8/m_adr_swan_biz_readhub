@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Core/Core.iml" filepath="$PROJECT_DIR$/Core/Core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Koala/Koala.iml" filepath="$PROJECT_DIR$/Koala/Koala.iml" />
       <module fileurl="file://$PROJECT_DIR$/ReadHub/ReadHub.iml" filepath="$PROJECT_DIR$/ReadHub/ReadHub.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwanBizReadHub.iml" filepath="$PROJECT_DIR$/SwanBizReadHub.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
