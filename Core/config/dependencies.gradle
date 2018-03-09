@@ -30,6 +30,9 @@ dependencies {
     api "${nice.TimberKt}"
     api "${nice.Croller}"
     api "${nice.SmoothRefreshLayout}"
+    api "${nice.GreedoLayout}"
+    api "${nice.Fresco}"
+    api "${nice.FrescoOkHttp}"
 
 //    api "${swan.AtomCore}"
 }

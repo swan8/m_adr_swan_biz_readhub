@@ -10,6 +10,8 @@ buildscript {
 
         maven { url 'https://jitpack.io' }
 
+        maven { url 'https://github.com/500px/greedo-layout-for-android/raw/master/releases/' }
+
         maven {
             url "http://repo1.maven.org/maven2"
         }
@@ -43,6 +45,8 @@ allprojects {
     repositories {
 
         maven { url 'https://jitpack.io' }
+
+        maven { url 'https://github.com/500px/greedo-layout-for-android/raw/master/releases/' }
 
         maven {
             url "http://repo1.maven.org/maven2"

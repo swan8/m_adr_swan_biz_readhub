@@ -66,4 +66,5 @@ dependencies {
 
     implementation project(':ReadHub')
     implementation project(':Koala')
+    implementation project(':Core')
 }

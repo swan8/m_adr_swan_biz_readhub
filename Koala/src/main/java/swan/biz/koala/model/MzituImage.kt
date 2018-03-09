@@ -12,4 +12,8 @@ class MzituImage {
     var original: String? = null
 
     var title: String? = null
+
+    var date: String? = null
+
+    var views: String? = null
 }

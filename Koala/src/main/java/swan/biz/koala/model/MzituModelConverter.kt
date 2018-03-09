@@ -24,6 +24,9 @@ class MzituModelConverter {
             image.url = it?.select("a")?.first()?.attr("href")
             image.original = it?.select("img")?.first()?.attr("data-original")
             image.title = it?.select("img")?.first()?.attr("alt")
+            image.date = it?.select("span[class=time]")?.first()?.html()
+            image.views = it?.select("span[class=view]")?.first()?.html()
+
             list.add(image)
         }
 

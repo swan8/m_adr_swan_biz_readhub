@@ -32,16 +32,18 @@ ext {
             Ver_Rx_Android                  : "2.0.1",
             Ver_Rx_Kotlin                   : "2.2.0",
 
-            Ver_Ramotion_CardSlider         : "0.2.0", // https://github.com/Ramotion/cardslider-android
-            Ver_Ramotion_ECollection        : "0.9.0", // https://github.com/Ramotion/expanding-collection-android
+            Ver_Ramotion_CardSlider         : "0.2.0",      // https://github.com/Ramotion/cardslider-android
+            Ver_Ramotion_ECollection        : "0.9.0",      // https://github.com/Ramotion/expanding-collection-android
 
             Ver_MikePenz_FastAdapter        : "3.2.4@aar",
             Ver_MikePenz_Materialize        : "1.1.2",
 
             Ver_Jsoup                       : "1.11.2",
             Ver_Nice_Timber                 : "1.4.0",
-            Ver_Nice_Croller                : "1.0.7", // https://github.com/harjot-oberai/Croller
-            Ver_Nice_SmoothRefreshLayout    : "1.6.2", // https://github.com/dkzwm/SmoothRefreshLayout
+            Ver_Nice_Croller                : "1.0.7",      // https://github.com/harjot-oberai/Croller
+            Ver_Nice_SmoothRefreshLayout    : "1.6.2",      // https://github.com/dkzwm/SmoothRefreshLayout
+            Ver_Nice_GreedoLayout           : "1.1.0",      // https://github.com/500px/greedo-layout-for-android
+            Ver_Nice_Fresco                 : "0.12.0",     // https://www.fresco-cn.org/docs/index.html
     ]
 
     NewKotlin = [
@@ -102,5 +104,8 @@ ext {
             TimberKt                        : "com.github.ajalt:timberkt:${libVersions.Ver_Nice_Timber}",
             Croller                         : "com.sdsmdg.harjot:croller:${libVersions.Ver_Nice_Croller}",
             SmoothRefreshLayout             : "com.github.dkzwm:SmoothRefreshLayout:${libVersions.Ver_Nice_SmoothRefreshLayout}",
+            GreedoLayout                    : "com.fivehundredpx:greedo-layout:${libVersions.Ver_Nice_GreedoLayout}",
+            Fresco                          : "com.facebook.fresco:fresco:${libVersions.Ver_Nice_Fresco}",
+            FrescoOkHttp                    : "com.facebook.fresco:imagepipeline-okhttp3:${libVersions.Ver_Nice_Fresco}"
     ]
 }
