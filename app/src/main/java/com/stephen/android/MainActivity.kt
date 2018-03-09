@@ -1,11 +1,9 @@
 package com.stephen.android
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-
+import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import com.stephen.android.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         hello.setOnClickListener {
-            startActivity(Intent("swan.biz.readhub.activity.ReadHubMasterActivity.action"))
+//            startActivity(Intent("swan.biz.readhub.activity.ReadHubMasterActivity.action"))
+            startActivity(Intent("swan.biz.koala.activity.MzituMasterActivity.action"))
         }
     }
 }

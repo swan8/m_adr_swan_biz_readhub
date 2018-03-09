@@ -65,4 +65,5 @@ dependencies {
     annotationProcessor "${google.LifeCycleCompiler}"
 
     implementation project(':ReadHub')
+    implementation project(':Koala')
 }
