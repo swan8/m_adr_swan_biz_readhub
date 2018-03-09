@@ -2,8 +2,7 @@ package swan.biz.koala.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import swan.atom.core.base.AtomCoreBaseSchedulerTransformer
 import swan.biz.koala.R
 import swan.biz.koala.model.MzituImage
 import swan.biz.koala.model.MzituModelConverter
@@ -19,12 +18,9 @@ class MzituMasterActivity: AppCompatActivity() {
         setContentView(R.layout.mzitu_master)
 
         MzituRequestDelegate.Mzitu()?.postRequestMzituHot(1)!!
-//                .compose(SchedulerTransformer())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .compose(AtomCoreBaseSchedulerTransformer())
                 .subscribe({
                     val list: MutableList<MzituImage> = MzituModelConverter().mConverterList(it)
-                    println("list::${list}")
                 }, {
 
                 })

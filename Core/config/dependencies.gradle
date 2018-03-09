@@ -14,6 +14,7 @@ dependencies {
     api "${square.Retrofit}"
     api "${square.Retrofit_Adapter}"
     api "${square.Retrofit_Jackson}"
+    api "${square.Retrofit_Scalars}"
     api "${square.Okhttp_Logging}"
 
     api "${ReactiveX.RxAndroid}"
@@ -24,8 +25,8 @@ dependencies {
     api "${mikePenz.FastAdapterCommons}"
 
     api "${ramotion.CardSlider}"
-    api "${ramotion.ECollection}"
 
+    api "${nice.Jsoup}"
     api "${nice.TimberKt}"
     api "${nice.Croller}"
     api "${nice.SmoothRefreshLayout}"

@@ -14,13 +14,12 @@ class MzituModelConverter {
 
     fun mConverterList(xml: String?): MutableList<MzituImage> {
         val list: MutableList<MzituImage> = mutableListOf<MzituImage>()
-        xml?.map {
+
+        xml?.let {
             Jsoup.parse(xml)
-        }?.map {
-            it.select(LIST)
-        }?.map {
-            it?.get(0)?.select("li")
-        }?.map {
+        }.let {
+            it?.select(LIST)
+        }?.first()?.select("li")?.map {
             val image: MzituImage = MzituImage()
             image.url = it?.select("a")?.first()?.attr("href")
             image.original = it?.select("img")?.first()?.attr("data-original")
