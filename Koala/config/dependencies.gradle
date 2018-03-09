@@ -1,0 +1,35 @@
+dependencies {
+
+    implementation "${google.supportAppcompatV7}"
+    implementation "${google.supportCardView}"
+    implementation "${google.supportConstraintLayout}"
+    implementation "${google.supportDesign}"
+
+    implementation "${google.LifeCycleRuntim}"
+    implementation "${google.LifeCycleExtensions}"
+    annotationProcessor "${google.LifeCycleCompiler}"
+
+    implementation "${NewKotlin.Kotlin}"
+
+    implementation "${square.Retrofit}"
+    implementation "${square.Retrofit_Adapter}"
+    implementation "${square.Retrofit_Jackson}"
+    implementation "${square.Retrofit_Scalars}"
+    implementation "${square.Okhttp_Logging}"
+
+    implementation "${ReactiveX.RxAndroid}"
+    implementation "${ReactiveX.RxKotlin}"
+
+    implementation "${mikePenz.Materialize}"
+    implementation "${mikePenz.FastAdapter}"
+    implementation "${mikePenz.FastAdapterCommons}"
+
+    implementation "${ramotion.CardSlider}"
+
+    implementation "${nice.Jsoup}"
+    implementation "${nice.TimberKt}"
+    implementation "${nice.Croller}"
+    implementation "${nice.SmoothRefreshLayout}"
+
+    implementation "${swan.AtomCore}"
+}

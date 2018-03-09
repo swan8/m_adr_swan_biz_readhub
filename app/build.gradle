@@ -23,10 +23,26 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
+
         release {
+            storeFile file('src/release/swan.jks')
+            storePassword 'adrSwan'
+            keyAlias 'adrSwan'
+            keyPassword 'adrSwan'
+            v2SigningEnabled false
+        }
+    }
+
+    buildTypes {
+
+        release {
+            zipAlignEnabled true
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable true
         }
     }
 

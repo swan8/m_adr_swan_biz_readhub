@@ -21,6 +21,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+
+        release {
+            storeFile file('src/release/swan.jks')
+            storePassword 'adrSwan'
+            keyAlias 'adrSwan'
+            keyPassword 'adrSwan'
+            v2SigningEnabled false
+        }
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
