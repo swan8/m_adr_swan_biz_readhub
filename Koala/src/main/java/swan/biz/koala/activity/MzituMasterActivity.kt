@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import swan.biz.koala.R
+import swan.biz.koala.model.MzituImage
+import swan.biz.koala.model.MzituModelConverter
 import swan.biz.koala.network.MzituRequestDelegate
 
 /**
@@ -21,7 +23,8 @@ class MzituMasterActivity: AppCompatActivity() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    println("SSSSSSS::${it}")
+                    val list: MutableList<MzituImage> = MzituModelConverter().mConverterList(it)
+                    println("list::${list}")
                 }, {
 
                 })
