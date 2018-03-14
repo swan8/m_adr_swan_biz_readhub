@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="atom_core_resTextColorBlack">#FF373737</color>
+
+    <color name="atom_core_resTextColorSomber">#FF8895B3</color>
+
+    <color name="atom_core_resTextColorGrey">#FF848484</color>
+
+    <color name="atom_core_resTextColorDeepBlue">#FF0069CA</color>
+
+    <color name="atom_core_resTextColorRed">#FFED160E</color>
+    
+    <style name="AtomCoreStyle" />
+
+    <style name="AtomCoreStyle.WhiteTinyText">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AtomCoreStyle.WhiteSmallText">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AtomCoreStyle.WhiteTintSmallText">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AtomCoreStyle.WhiteNormalText">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AtomCoreStyle.WhiteBigText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AtomCoreStyle.WhiteContentTitleText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AtomCoreStyle.WhiteHugeText">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AtomCoreStyle.WhiteSuperHugeText">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AtomCoreStyle.WhiteSuperLargeHugeText">
+        <item name="android:textSize">32dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    
+    <style name="AtomCoreStyle.BlackTinyText">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackSmallText">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackNormalText">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackBigText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackSuperBigText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackHugeText">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackSuperHugeText">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackSuperHuge1Text">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackSuperLargeHugeText">
+        <item name="android:textSize">40dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.BlackContentTitleText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorBlack</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberSmallText">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberNormalText">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberBigText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberSuperBigText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberHugeText">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberSuperHugeText">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberSuperHuge1Text">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberSuperLargeHugeText">
+        <item name="android:textSize">40dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.SomberContentTitleText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorSomber</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreyTinyText">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreySmallText">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreyNormalText">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreyBigText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreySuperBigText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreyHugeText">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreySuperHugeText">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreySuperHuge1Text">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreySuperLargeHugeText">
+        <item name="android:textSize">40dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.GreyContentTitleText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorGrey</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedTinyText">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedSmallText">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedNormalText">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedBigText">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedSuperBigText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedHugeText">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedSuperHugeText">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedSuperHuge1Text">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedSuperLargeHugeText">
+        <item name="android:textSize">40dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+
+    <style name="AtomCoreStyle.RedContentTitleText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/atom_core_resTextColorRed</item>
+    </style>
+</resources>

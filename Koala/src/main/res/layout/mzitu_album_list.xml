@@ -3,8 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/albumListContainer"
+    <me.dkzwm.widget.srl.MaterialSmoothRefreshLayout
+        android:id="@+id/albumSrfLayoutContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/albumListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </me.dkzwm.widget.srl.MaterialSmoothRefreshLayout>
 </FrameLayout>

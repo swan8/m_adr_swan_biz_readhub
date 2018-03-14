@@ -12,9 +12,11 @@ interface IMzituRequestService {
     companion object {
 
         const val BASE_URL = "http://www.mzitu.com/"
-        
+
         const val API_PAGE = "page/{page}"
-        
+
+        const val API_INDEX = API_PAGE
+
         const val API_ALL = "all/${API_PAGE}"
 
         const val API_HOT = "hot/${API_PAGE}"
@@ -33,6 +35,11 @@ interface IMzituRequestService {
         
         const val API_IMAGE_LIST = "{imageId}/{page}"
     }
+
+    @GET(IMzituRequestService.API_INDEX)
+    fun postRequestMztIndex(
+            @Path(IMzituApiField.page) page: Int
+    ): Observable<String>
 
     @GET(IMzituRequestService.API_ALL)
     fun postRequestMzituAll(

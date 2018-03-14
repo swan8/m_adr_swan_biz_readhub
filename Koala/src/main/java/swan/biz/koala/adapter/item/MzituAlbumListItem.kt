@@ -6,15 +6,15 @@ import kotlinx.android.synthetic.main.mzitu_album_list_body.view.*
 import swan.atom.core.base.AtomCoreBaseFasterItem
 import swan.biz.koala.KoalaApplicationImpl
 import swan.biz.koala.R
-import swan.biz.koala.model.MzituImage
+import swan.biz.koala.model.MztAlbum
 
 /**
  * Created by stephen on 09/03/2018.
  */
-class MzituAlbumListItem(album: MzituImage): AtomCoreBaseFasterItem<MzituImage, MzituAlbumListItem, MzituAlbumListItem.MzituAlbumBodyHolder>(album) {
+class MzituAlbumListItem(album: MztAlbum) : AtomCoreBaseFasterItem<MztAlbum, MzituAlbumListItem, MzituAlbumListItem.MzituAlbumBodyHolder>(album) {
 
     override fun getType(): Int {
-        return R.id.mzituResAdapterItem_AlbumList
+        return R.id.mzt_resAdapterItem_AlbumList
     }
 
     override fun getViewHolder(view: View?): MzituAlbumBodyHolder {
@@ -30,10 +30,10 @@ class MzituAlbumListItem(album: MzituImage): AtomCoreBaseFasterItem<MzituImage, 
         holder?.onBindView(KoalaApplicationImpl.getContext(), src)
     }
 
-    class MzituAlbumBodyHolder(view: View?): AtomCoreBaseFasterItem.AtomPubFastAdapterItemHolder<MzituImage>(view) {
+    class MzituAlbumBodyHolder(view: View?) : AtomCoreBaseFasterItem.AtomPubFastAdapterItemHolder<MztAlbum>(view) {
 
-        override fun onBindView(context: Context?, album: MzituImage?) {
-            itemView.bodyImage.setImageURI(album?.original)
+        override fun onBindView(context: Context?, album: MztAlbum?) {
+            itemView.bodyImage.setImageURI(album?.image)
         }
     }
 }

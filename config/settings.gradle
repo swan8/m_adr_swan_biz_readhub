@@ -106,6 +106,6 @@ ext {
             SmoothRefreshLayout             : "com.github.dkzwm:SmoothRefreshLayout:${libVersions.Ver_Nice_SmoothRefreshLayout}",
             GreedoLayout                    : "com.fivehundredpx:greedo-layout:${libVersions.Ver_Nice_GreedoLayout}",
             Fresco                          : "com.facebook.fresco:fresco:${libVersions.Ver_Nice_Fresco}",
-            FrescoOkHttp                    : "com.facebook.fresco:imagepipeline-okhttp3:${libVersions.Ver_Nice_Fresco}"
+            FrescoOkHttp                    : "com.facebook.fresco:imagepipeline-okhttp3:${libVersions.Ver_Nice_Fresco}",
     ]
 }

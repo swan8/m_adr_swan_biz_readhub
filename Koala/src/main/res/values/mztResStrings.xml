@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="mzt_resStringMasterTabAll">小宇宙</string>
+    <string name="mzt_resStringMasterTabCategory">银河系</string>
+    <string name="mzt_resStringMasterTabMix">外太空</string>
+    <string name="mzt_resStringMasterTabMixTopic">专题</string>
+    <string name="mzt_resStringMasterTabMixSelfie">自拍</string>
+    <string name="mzt_resStringMasterTabMixAxis">时间线</string>
+
+</resources>
