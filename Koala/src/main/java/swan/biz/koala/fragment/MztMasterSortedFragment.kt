@@ -28,6 +28,8 @@ class MztMasterSortedFragment : AtomCoreBaseFragment(), SmoothRefreshLayout.OnRe
 
     var fastItemAdapter: FastItemAdapter<MzituAlbumListItem>? = null
 
+    var ratio: MutableList<Double> = mutableListOf<Double>()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.mzt_master_sorted, container, false)
     }
@@ -35,15 +37,14 @@ class MztMasterSortedFragment : AtomCoreBaseFragment(), SmoothRefreshLayout.OnRe
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        sortedFilterNew.setOnClickListener(this)
-        sortedFilterHot.setOnClickListener(this)
-        sortedFilterRecommend.setOnClickListener(this)
-
-        masterSortedRefreshContainer.setOnRefreshListener(this)
+        masterSortedRefreshContainer.let {
+            it.setOnRefreshListener(this)
+            it.setDisableLoadMore(true)
+        }
 
         masterSortedRecyclerContainer.let {
             val layoutManager = GreedoLayoutManager(this)
-            layoutManager.setMaxRowHeight(dpToPx(256f, KoalaApplicationImpl.getContext()!!))
+            layoutManager.setMaxRowHeight(dpToPx(320f, KoalaApplicationImpl.getContext()!!))
 
             it.layoutManager = layoutManager
             it.addItemDecoration(GreedoSpacingItemDecoration(4))
@@ -57,48 +58,31 @@ class MztMasterSortedFragment : AtomCoreBaseFragment(), SmoothRefreshLayout.OnRe
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val vm: MztMasterSortedViewModel = ViewModelProviders.of(activity!!).get(MztMasterSortedViewModel::class.java)
-        vm.category.observe(this, android.arch.lifecycle.Observer {
+        val masterSortedViewModel: MztMasterSortedViewModel = ViewModelProviders.of(activity!!).get(MztMasterSortedViewModel::class.java)
+        masterSortedViewModel.category.observe(this, android.arch.lifecycle.Observer {
             onRefreshBegin(true)
         })
 
-        vm.postList.observe(this, android.arch.lifecycle.Observer {
+        masterSortedViewModel.postList.observe(this, android.arch.lifecycle.Observer {
             val items: MutableList<MzituAlbumListItem> = mutableListOf()
             it?.postList?.map {
                 items.add(MzituAlbumListItem(it))
             }
 
-            if (vm.pageNo == 0) {
-                fastItemAdapter?.clear()
-            }
-
+            masterSortedViewModel.isFirstPage(fastItemAdapter)
             fastItemAdapter?.add(items)
 
             masterSortedRefreshContainer.setDisableLoadMore(! it?.pageNavigationHasNext!!)
             masterSortedRefreshContainer.refreshComplete()
         })
 
-        vm.category.value = IMzituRequestService.CATEGORY.INDEX
-    }
-
-    override fun onClick(v: View?) {
-        val vm: MztMasterSortedViewModel = ViewModelProviders.of(activity!!).get(MztMasterSortedViewModel::class.java)
-        when (v?.id) {
-            R.id.sortedFilterNew ->
-                vm.resetMasterSortedCategory(IMzituRequestService.CATEGORY.INDEX)
-            R.id.sortedFilterHot ->
-                vm.resetMasterSortedCategory(IMzituRequestService.CATEGORY.HOT)
-            R.id.sortedFilterRecommend ->
-                vm.resetMasterSortedCategory(IMzituRequestService.CATEGORY.BEST)
-            else ->
-                super.onClick(v)
-        }
+        masterSortedViewModel.resetMasterSortedCategory(IMzituRequestService.CATEGORY.INDEX)
     }
 
     override fun onRefreshBegin(isRefresh: Boolean) {
         activity?.let {
-            val vm: MztMasterSortedViewModel = ViewModelProviders.of(it).get(MztMasterSortedViewModel::class.java)
-            vm.loadMasterDataCenter(isRefresh)
+            val masterSortedViewModel: MztMasterSortedViewModel = ViewModelProviders.of(it).get(MztMasterSortedViewModel::class.java)
+            masterSortedViewModel.loadMasterDataCenter(isRefresh)
         }
     }
 
@@ -106,8 +90,14 @@ class MztMasterSortedFragment : AtomCoreBaseFragment(), SmoothRefreshLayout.OnRe
 
     }
 
-    override fun aspectRatioForIndex(p0: Int): Double {
-        return (Random().nextInt(25) + 55.0) / 100
+    override fun aspectRatioForIndex(index: Int): Double {
+        var r: Double? = ratio.getOrNull(index)
+        if (null == r) {
+            r = (Random().nextInt(25) + 55.0) / 100
+            ratio.add(index, r)
+        }
+
+        return r
     }
 
     fun dpToPx(dp: Float, context: Context): Int {

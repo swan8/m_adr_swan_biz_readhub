@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="mzt_resStringMasterTabAll">
+    <string-array name="mzt_resStringMasterTabSorted">
         <item>最新</item>
         <item>最热</item>
         <item>推荐</item>

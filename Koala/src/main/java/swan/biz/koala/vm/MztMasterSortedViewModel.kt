@@ -2,8 +2,11 @@ package swan.biz.koala.vm
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.mikepenz.fastadapter.commons.adapters.FastItemAdapter
+import kotlinx.android.synthetic.main.mzt_master_sorted.*
 import org.jsoup.Jsoup
 import swan.atom.core.base.AtomCoreBaseSchedulerTransformer
+import swan.biz.koala.R
 import swan.biz.koala.model.MztDataCenter
 import swan.biz.koala.network.IMzituRequestService
 import swan.biz.koala.network.IMztNodeField
@@ -25,6 +28,25 @@ class MztMasterSortedViewModel : ViewModel() {
 
     fun resetMasterSortedCategory(c: String) {
         category.value = c
+    }
+
+    fun getMasterSortedCategoryLabel(): Int {
+        return when (category.value) {
+            IMzituRequestService.CATEGORY.INDEX ->
+                    R.string.mzt_resStringMasterTabSortedNew
+            IMzituRequestService.CATEGORY.HOT ->
+                    R.string.mzt_resStringMasterTabSortedHot
+            IMzituRequestService.CATEGORY.BEST ->
+                    R.string.mzt_resStringMasterTabSortedRecommend
+            else ->
+                R.string.mzt_resStringMasterTabSortedNew
+        }
+    }
+
+    fun isFirstPage(adapter: FastItemAdapter<*>?): Unit {
+        when (pageNo) {
+            1 -> adapter?.clear()
+        }
     }
 
     fun loadMasterDataCenter(isRefresh: Boolean) {
