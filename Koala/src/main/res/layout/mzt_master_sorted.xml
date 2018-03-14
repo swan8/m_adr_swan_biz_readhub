@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <me.dkzwm.widget.srl.MaterialSmoothRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/masterSortedRefreshContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/masterSortedRecyclerContainer"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/masterSortedRecyclerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sortedFilterHot" />
+
+        <TextView
+            android:id="@+id/sortedFilterHot"
+            style="@style/AtomCoreStyle.BlackNormalText"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="@string/mzt_resStringMasterTabSortedHot"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sortedFilterNew"
+            style="@style/AtomCoreStyle.BlackNormalText"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="@string/mzt_resStringMasterTabSortedNew"
+            app:layout_constraintRight_toLeftOf="@+id/sortedFilterHot"
+            app:layout_constraintTop_toTopOf="@+id/sortedFilterHot" />
+
+        <TextView
+            android:id="@+id/sortedFilterRecommend"
+            style="@style/AtomCoreStyle.BlackNormalText"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="@string/mzt_resStringMasterTabSortedRecommend"
+            app:layout_constraintLeft_toRightOf="@+id/sortedFilterHot"
+            app:layout_constraintTop_toTopOf="@+id/sortedFilterHot" />
+    </android.support.constraint.ConstraintLayout>
 </me.dkzwm.widget.srl.MaterialSmoothRefreshLayout>

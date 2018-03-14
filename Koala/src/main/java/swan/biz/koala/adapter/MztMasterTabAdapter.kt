@@ -78,7 +78,7 @@ class MztMasterTabAdapter constructor(fragmentManager: FragmentManager): Fragmen
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
             POSITION.SORTED ->
-                KoalaApplicationImpl.getContext()?.getString(R.string.mzt_resStringMasterTabAll)
+                KoalaApplicationImpl.getContext()?.getString(R.string.mzt_resStringMasterTabSorted)
             POSITION.CATEGORY ->
                 KoalaApplicationImpl.getContext()?.getString(R.string.mzt_resStringMasterTabCategory)
             POSITION.MIX_TOPIC ->

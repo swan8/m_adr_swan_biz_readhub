@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="mzt_resStringMasterTabAll">小宇宙</string>
+    <string name="mzt_resStringMasterTabSorted">小宇宙</string>
+    <string name="mzt_resStringMasterTabSortedNew">最新</string>
+    <string name="mzt_resStringMasterTabSortedHot">最热</string>
+    <string name="mzt_resStringMasterTabSortedRecommend">推荐</string>
     <string name="mzt_resStringMasterTabCategory">银河系</string>
     <string name="mzt_resStringMasterTabMix">外太空</string>
     <string name="mzt_resStringMasterTabMixTopic">专题</string>

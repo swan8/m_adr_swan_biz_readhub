@@ -1,33 +1,21 @@
 package swan.biz.koala.activity
 
-import android.content.Context
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.design.widget.TabLayout
-import android.support.v7.app.AppCompatActivity
-import android.util.TypedValue
-import com.fivehundredpx.greedolayout.GreedoLayoutSizeCalculator
-import com.mikepenz.fastadapter.commons.adapters.FastItemAdapter
+import android.support.v4.view.ViewPager
+import android.widget.TextView
 import kotlinx.android.synthetic.main.mzt_master.*
-import me.dkzwm.widget.srl.SmoothRefreshLayout
-import org.jsoup.Jsoup
-import swan.atom.core.base.AtomCoreBaseSchedulerTransformer
+import swan.atom.core.base.AtomCoreBaseActivity
 import swan.biz.koala.R
 import swan.biz.koala.adapter.MztMasterTabAdapter
-import swan.biz.koala.adapter.item.MzituAlbumListItem
-import swan.biz.koala.model.MztDataCenter
-import swan.biz.koala.network.IMztNodeField
-import swan.biz.koala.network.MzituRequestDelegate
-import java.util.*
-
+import swan.biz.koala.model.MztUnit
+import swan.biz.koala.vm.MztMasterSortedViewModel
 
 /**
  * Created by stephen on 18-3-9.
  */
-class MzituMasterActivity: AppCompatActivity(), GreedoLayoutSizeCalculator.SizeCalculatorDelegate, SmoothRefreshLayout.OnRefreshListener {
-
-    var pageNo: Int = 1
-
-    var fastItemAdapter: FastItemAdapter<MzituAlbumListItem>? = null
+class MzituMasterActivity: AtomCoreBaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,75 +29,32 @@ class MzituMasterActivity: AppCompatActivity(), GreedoLayoutSizeCalculator.SizeC
 
         masterTabContainer.let {
             it.setupWithViewPager(masterPagerContainer)
-            it.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(masterPagerContainer))
+            it.addOnTabSelectedListener(OnMasterTabSelectedListener(masterPagerContainer))
         }
 
-        onRefreshBegin(true)
-
-//        albumSrfLayoutContainer.let {
-//            it.setOnRefreshListener(this@MzituMasterActivity)
-//            it.autoRefresh()
-//        }
-//
-//        albumListContainer.let {
-//            val layoutManager = GreedoLayoutManager(this@MzituMasterActivity)
-//            layoutManager.setMaxRowHeight(dpToPx(256f, applicationContext))
-//
-//            it.layoutManager = layoutManager
-//            it.addItemDecoration(GreedoSpacingItemDecoration(4))
-//            it.setHasFixedSize(true)
-//
-//            fastItemAdapter = FastItemAdapter<MzituAlbumListItem>()
-//            it.adapter = fastItemAdapter
-//        }
+        val vm: MztMasterSortedViewModel = ViewModelProviders.of(this).get(MztMasterSortedViewModel::class.java)
+        vm.postList.observe(this, android.arch.lifecycle.Observer {
+            resetMasterTopLayout(it?.top)
+        })
     }
 
-    override fun aspectRatioForIndex(index: Int): Double {
-        return (Random().nextInt(25) + 55.0) / 100
-    }
+    private fun resetMasterTopLayout(top: MutableList<MztUnit>?): Unit {
+        val textViews: Array<TextView> = arrayOf(
+                masterPostTopGolden, masterPostTopSilver, masterPostTopBronze
+        )
 
-    override fun onRefreshBegin(isRefresh: Boolean) {
-        when (isRefresh) {
-            true -> pageNo = 1
-            false -> ++ pageNo
+        top?.indices?.forEach {
+            if (it < textViews.size) {
+                textViews[it].text = top[it].title
+                textViews[it].setOnClickListener(this@MzituMasterActivity)
+            }
         }
-
-        MzituRequestDelegate.Mzitu()?.postRequestMztIndex(pageNo)!!
-                .compose(AtomCoreBaseSchedulerTransformer())
-                .subscribe({
-                    val dataCenter: MztDataCenter = MztDataCenter()
-                    it.let {
-                        Jsoup.parse(it)
-                    }?.let {
-                        dataCenter.searchPlaceHolder = it.selectFirst(IMztNodeField.SEARCH_INPUT).attr(IMztNodeField.NODE_PLACEHOLDER)
-                        dataCenter.pageNavigationWithDocument(it)
-                        dataCenter.topWithElements(it.select(IMztNodeField.WIDGET_TOP))
-                        dataCenter.guessWithElements(it.select(IMztNodeField.WIDGET_LIKE_GUESS))
-                        dataCenter.loveWithElements(it.select(IMztNodeField.WIDGET_LIKE_LOVE))
-                        dataCenter.postListWithElements(it.select(IMztNodeField.POST_LIST))
-                    }
-
-                    val items: MutableList<MzituAlbumListItem> = mutableListOf()
-                    dataCenter.postList.map {
-                        items.add(MzituAlbumListItem(it))
-                    }
-
-//                    fastItemAdapter?.add(items)
-
-//                    albumSrfLayoutContainer.let {
-//                        it.setDisableLoadMore(false)
-//                        it.refreshComplete()
-//                    }
-                }, {
-//                    albumSrfLayoutContainer.refreshComplete()
-                })
     }
 
-    override fun onRefreshComplete(isSuccessful: Boolean) {
+    inner class OnMasterTabSelectedListener constructor(viewPager: ViewPager) : TabLayout.ViewPagerOnTabSelectedListener(viewPager) {
 
-    }
-
-    fun dpToPx(dp: Float, context: Context): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.resources.displayMetrics).toInt()
+        override fun onTabSelected(tab: TabLayout.Tab?) {
+            super.onTabSelected(tab)
+        }
     }
 }

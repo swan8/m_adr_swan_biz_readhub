@@ -12,7 +12,7 @@ class MztDataCenter {
 
     var pageNavigationHasPrev: Boolean? = false
 
-    var pageNavigationHasNext: Boolean? = true
+    var pageNavigationHasNext: Boolean = true
 
     var pageNavigationLastNumber: String? = null
 
@@ -30,7 +30,7 @@ class MztDataCenter {
         document?.let {
             pageNavigationHasPrev = null != it.selectFirst(IMztNodeField.PAGE_NAVI_PREV)
             pageNavigationHasNext = null != it.selectFirst(IMztNodeField.PAGE_NAVI_NEXT)
-            pageNavigationLastNumber = it.select(IMztNodeField.PAGE_NAVI_NUMBER).last().text()
+            pageNavigationLastNumber = it.select(IMztNodeField.PAGE_NAVI_NUMBER)?.last()?.text()
         }
     }
 
