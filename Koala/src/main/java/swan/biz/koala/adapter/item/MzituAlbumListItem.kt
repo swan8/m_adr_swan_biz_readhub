@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import kotlinx.android.synthetic.main.mzitu_album_list_body.view.*
 import swan.atom.core.base.AtomCoreBaseFasterItem
+import swan.atom.core.base.AtomCoreBaseFasterItemHolder
 import swan.biz.koala.KoalaApplicationImpl
 import swan.biz.koala.R
 import swan.biz.koala.model.MztAlbum
@@ -30,7 +31,7 @@ class MzituAlbumListItem(album: MztAlbum) : AtomCoreBaseFasterItem<MztAlbum, Mzi
         holder?.onBindView(KoalaApplicationImpl.getContext(), src)
     }
 
-    class MzituAlbumBodyHolder(view: View?) : AtomCoreBaseFasterItem.AtomPubFastAdapterItemHolder<MztAlbum>(view) {
+    class MzituAlbumBodyHolder(view: View?) : AtomCoreBaseFasterItemHolder<MztAlbum>(view) {
 
         override fun onBindView(context: Context?, album: MztAlbum?) {
             itemView.bodyImage.setImageURI(album?.image)

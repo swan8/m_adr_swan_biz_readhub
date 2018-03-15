@@ -8,6 +8,7 @@ import swan.atom.core.basectx.SwanAtomBaseApplication
 class App: SwanAtomBaseApplication() {
 
     override fun initModuleApplicationImpl(module: MutableList<String>) {
+        module.add("swan.atom.core.AtomCoreApplicationImpl")
         module.add("swan.biz.koala.KoalaApplicationImpl")
     }
 }

@@ -5,9 +5,7 @@ import android.content.Context
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.backends.okhttp3.OkHttpImagePipelineConfigFactory
 import com.github.ajalt.timberkt.Timber
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import swan.atom.core.basectx.SwanAtomApplicationImpl
 import java.lang.ref.WeakReference
 
@@ -39,7 +37,9 @@ class KoalaApplicationImpl: SwanAtomApplicationImpl {
                         .newBuilder(
                                 application.applicationContext,
                                 OkHttpClient.Builder()
-                                        .addInterceptor(FrescoOkHttpInterceptor())
+                                        .addInterceptor({
+                                            it.proceed(it.request().newBuilder().addHeader("Referer", "http://www.mzitu.com/").build())
+                                        })
                                         .build()
                         ).build()
         )
@@ -51,12 +51,5 @@ class KoalaApplicationImpl: SwanAtomApplicationImpl {
         }
 
         return null
-    }
-
-    class FrescoOkHttpInterceptor: Interceptor {
-
-        override fun intercept(chain: Interceptor.Chain): Response {
-            return chain.proceed(chain.request().newBuilder().addHeader("Referer", "http://www.mzitu.com/").build())
-        }
     }
 }
